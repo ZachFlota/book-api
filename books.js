@@ -1,11 +1,12 @@
-const mongoose = require('mongoose')
+const router = require('express').Router()
+const res = require("express/lib/response")
+const db = require('../models/books')
 
-let bookSchema = new mongoose.Schema({
-    title: {type: String},
-    description: {type: String},
-    year: {type: Number},
-    quantity: {type: Number},
-    imageURL: {type: String}
+
+
+//Routes
+router.get('/', (req, res) => {
+    res.render('/books')
 })
 
-module.exports = mongoose.model('Book', bookSchema)
+module.exports = router
